@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tqdm = "*"
+scipy = "*"
+scikit-learn = "*"
+wfdb = "*"
+keras = "*"
+six = "*"
+numpy = "*"
+tensorflow = "*"
+deepdish = "*"
+gevent = "*"
+virtualenv = "*"
+Flask = "*"
+Werkzeug = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
