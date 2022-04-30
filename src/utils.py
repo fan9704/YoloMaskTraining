@@ -227,12 +227,17 @@ def preprocess(data, config):
 
 # predict 
 def uploadedData(filename, csvbool = True):
+    index=0
     if csvbool:
       csvlist = list()
       with open(filename, 'r') as csvfile:
-        for e in csvfile:
-          if len(e.split()) == 1 :
-            csvlist.append(float(e))
-          else:
-            csvlist.append(e)
+        for e in csvfile:#Ignore index 0
+            index+=1
+            if index==1:
+                continue
+            if len(e.split()) == 1 :
+                csvlist.append(float(e))
+            else:
+                csvlist.append(e)
+
     return csvlist

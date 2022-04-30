@@ -17,7 +17,7 @@ classesM = ['N','V','L','R','Paced','A','F']#,'f','j','E','a','J','Q','e','S']
 
 print('Check http://127.0.0.1:5000/')
 
-
+config = get_config()
 def model_predict(img_path):
     data = uploadedData(img_path, csvbool = True)
     sr = data[0]

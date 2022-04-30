@@ -2,7 +2,8 @@ from __future__ import division, print_function
 from keras.models import Model
 from keras.layers import Input, Conv1D, Dense, add, Flatten, Dropout,MaxPooling1D, Activation, BatchNormalization, Lambda
 from keras import backend as K
-from keras.optimizers import Adam
+# from keras.optimizers import Adam#not Work
+from tensorflow.keras.optimizers import Adam
 
 def ECG_model(config):
     """ 
