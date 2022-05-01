@@ -11,7 +11,7 @@ def cincData(config):
     if config.cinc_download:
       cmd = "curl -O https://archive.physionet.org/challenge/2017/training2017.zip"
       os.system(cmd)
-      os.system("unzip training2017.zip")
+      os.system("unzip training2017.zip")#Should Download Dependencies
     num = config.num
     import csv
     testlabel = []
@@ -58,8 +58,8 @@ def predictByPart(data, peaks):
     predicted = list()
     result = ""
     counter = [0]* len(classesM)
-    from keras.models import load_model
-    model = load_model('models/MLII-latest.hdf5')
+    from tensorflow.keras.models import load_model
+    model = load_model('../models/MLII-latest.hdf5')
     config = get_config() 
     for i, peak in enumerate(peaks[3:-1]):
       total_n =len(peaks)

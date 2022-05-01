@@ -2,7 +2,8 @@ from __future__ import division, print_function
 import matplotlib.pyplot as plt
 import numpy as np
 from tqdm import tqdm
-from keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard, ReduceLROnPlateau, LearningRateScheduler
+# from keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard, ReduceLROnPlateau, LearningRateScheduler
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard, ReduceLROnPlateau, LearningRateScheduler
 from graph import ECG_model
 from config import get_config
 from utils import *

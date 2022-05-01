@@ -1,5 +1,6 @@
 from __future__ import division, print_function
-from keras.callbacks import LearningRateScheduler
+# from keras.callbacks import LearningRateScheduler
+from tensorflow.keras.callbacks import LearningRateScheduler
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve, precision_recall_curve, f1_score, classification_report

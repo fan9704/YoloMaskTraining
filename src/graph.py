@@ -1,7 +1,10 @@
 from __future__ import division, print_function
-from keras.models import Model
-from keras.layers import Input, Conv1D, Dense, add, Flatten, Dropout,MaxPooling1D, Activation, BatchNormalization, Lambda
-from keras import backend as K
+from tensorflow.keras.models import Model
+# from keras.models import Model
+# from keras.layers import Input, Conv1D, Dense, add, Flatten, Dropout,MaxPooling1D, Activation, BatchNormalization, Lambda
+from tensorflow.keras.layers import Input, Conv1D, Dense, add, Flatten, Dropout,MaxPooling1D, Activation, BatchNormalization, Lambda
+# from keras import backend as K
+# from tensorflow.keras import backend as K
 # from keras.optimizers import Adam#not Work
 from tensorflow.keras.optimizers import Adam
 
@@ -44,13 +47,16 @@ def ECG_model(config):
         filter_length = config.filter_length
         n_blocks = 15
         for block_index in range(n_blocks):
+            from tensorflow.keras import backend  as K
             def zeropad(x):
+                from tensorflow.keras import backend 
                 """ 
                 zeropad and zeropad_output_shapes are from 
                 https://github.com/awni/ecg/blob/master/ecg/network.py
                 """
-                y = K.zeros_like(x)
-                return K.concatenate([x, y], axis=2)
+                print("-------------",backend ,"---------")
+                y = backend .zeros_like(x)
+                return backend .concatenate([x, y], axis=2)
 
             def zeropad_output_shape(input_shape):
                 shape = list(input_shape)
@@ -64,6 +70,7 @@ def ECG_model(config):
             # 5 is chosen instead of 4 from the original model
             if block_index % 4 == 0 and block_index > 0 :
                 # double size of the network and match the shapes of both branches
+                from tensorflow.keras.layers import Lambda 
                 shortcut = Lambda(zeropad, output_shape=zeropad_output_shape)(shortcut)
                 filter_length *= 2
 
@@ -86,7 +93,7 @@ def ECG_model(config):
         return layer
 
     def output_block(layer, config):
-        from keras.layers.wrappers import TimeDistributed
+        from tensorflow.keras.layers.wrappers import TimeDistributed
         layer = BatchNormalization()(layer)
         layer = Activation('relu')(layer)
         #layer = Flatten()(layer)
