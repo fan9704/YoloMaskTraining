@@ -93,7 +93,7 @@ def ECG_model(config):
         return layer
 
     def output_block(layer, config):
-        from tensorflow.keras.layers.wrappers import TimeDistributed
+        from keras.layers.wrappers import TimeDistributed
         layer = BatchNormalization()(layer)
         layer = Activation('relu')(layer)
         #layer = Flatten()(layer)
