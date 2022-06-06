@@ -54,7 +54,7 @@ def predict(data, label, peaks, config):
       return predicted, classesM[avgPredict.argmax()], 100*max(avgPredict[0])
 
 def predictByPart(data, peaks):
-    classesM = ['N','Ventricular','Paced','A','F','Noise']#,'L','R','f','j','E','a','J','Q','e','S']
+    classesM = ['N','Ventricular','Paced','A','F','Noise','L','R','f','j','E','a','J','Q','e','S']
     predicted = list()
     result = ""
     counter = [0]* len(classesM)
@@ -82,7 +82,7 @@ def predictByPart(data, peaks):
     return predicted, result
 
 def main(config):
-  classesM= ['N','Ventricular','Paced','A','F', 'Noise']#,'L','R','f','j','E','a','J','Q','e','S']
+  classesM= ['N','Ventricular','Paced','A','F', 'Noise','L','R','f','j','E','a','J','Q','e','S']
 
   if config.upload:
     data = uploadedData(file)

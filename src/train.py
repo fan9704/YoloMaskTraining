@@ -10,7 +10,7 @@ from utils import *
 
 def train(config, X, y, Xval=None, yval=None):
     
-    classes = ['N','V','/','A','F','~']#,'L','R',f','j','E','a']#,'J','Q','e','S']
+    classes = ['N','V','/','A','F','~','L','R','f','j','E','a']#,'J','Q','e','S']
     Xe = np.expand_dims(X, axis=2)
     if not config.split:
         from sklearn.model_selection import train_test_split

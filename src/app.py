@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 
 global classesM
-classesM = ['N','V','L','R','Paced','A','F']#,'f','j','E','a','J','Q','e','S']
+classesM = ['N','V','L','R','Paced','A','F','f','j','E','a','J','Q','e','S']
 
 print('Check http://127.0.0.1:5000/')
 

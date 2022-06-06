@@ -45,7 +45,7 @@ def preprocess( split ):
         trainset = [x for x in nums if x not in testset]
 
     def dataSaver(dataSet, datasetname, labelsname):
-        classes = ['N','V','/','A','F','~']#,'L','R',f','j','E','a']#,'J','Q','e','S']
+        classes = ['N','V','/','A','F','~','L','R','f','j','E','a']#,'J','Q','e','S']
         Nclass = len(classes)
         datadict, datalabel= dict(), dict()
 
