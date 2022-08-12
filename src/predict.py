@@ -59,7 +59,8 @@ def predictByPart(data, peaks):
     result = ""
     counter = [0]* len(classesM)
     from tensorflow.keras.models import load_model
-    model = load_model('../models/MLII-latest.hdf5')
+    file_path = os.path.join(os.getcwd(), 'models','MLII-latest.hdf5' )
+    model = load_model(file_path)
     config = get_config() 
     for i, peak in enumerate(peaks[3:-1]):
       total_n =len(peaks)
